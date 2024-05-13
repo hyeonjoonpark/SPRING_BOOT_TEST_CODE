@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.calculate.AdditionOperator;
-import org.example.calculate.DivisionOperator;
-import org.example.calculate.MultiplicationOperator;
-import org.example.calculate.SubtractionOperator;
+import org.example.calculate.*;
 
 import java.util.List;
 
@@ -16,7 +13,7 @@ public class Calculator {
     new DivisionOperator()
   );
 
-  public static int calculate(int operand1, String operator, int operand2, int result) {
+  public static int calculate(PositiveNumber operand1, String operator, PositiveNumber operand2) {
     return arithmeticOperators
       .stream()
       .filter(

@@ -1,33 +1,35 @@
 package org.example;
 
+import org.example.calculate.PositiveNumber;
+
 import java.util.Arrays;
 
 public enum ArithmeticOperator {
   ADDITION("+") {
     @Override
-    public int arithmeticCalculate(int operand1, int operand2) {
-      return operand1 + operand2;
+    public int arithmeticCalculate(PositiveNumber operand1, PositiveNumber operand2) {
+      return operand1.toInteger() + operand2.toInteger();
     }
   },
 
   SUBTRACTION("-") {
     @Override
-    public int arithmeticCalculate(int operand1, int operand2) {
-      return operand1 - operand2;
+    public int arithmeticCalculate(PositiveNumber operand1, PositiveNumber operand2) {
+      return operand1.toInteger() - operand2.toInteger();
     }
   },
 
   MULTIPLICATION("*") {
     @Override
-    public int arithmeticCalculate(int operand1, int operand2) {
-      return operand1 * operand2;
+    public int arithmeticCalculate(PositiveNumber operand1, PositiveNumber operand2) {
+      return operand1.toInteger() * operand2.toInteger();
     }
   },
 
   DIVISION("/") {
     @Override
-    public int arithmeticCalculate(int operand1, int operand2) {
-      return operand1 / operand2;
+    public int arithmeticCalculate(PositiveNumber operand1, PositiveNumber operand2) {
+      return operand1.toInteger() / operand2.toInteger();
     }
   };
 
@@ -37,9 +39,9 @@ public enum ArithmeticOperator {
     this.operator = operator;
   }
 
-  public abstract int arithmeticCalculate(int operand1, int operand2);
+  public abstract int arithmeticCalculate(PositiveNumber operand1, PositiveNumber operand2);
 
-  public static int calculate(int operand1, String operator, int operand2) {
+  public static int calculate(PositiveNumber operand1, String operator, PositiveNumber operand2) {
     ArithmeticOperator arithmeticOperator = Arrays.stream(values())
       .filter(v -> v.operator.equals(operator))
       .findFirst()
