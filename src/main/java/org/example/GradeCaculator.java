@@ -14,7 +14,7 @@ public class GradeCaculator {
 
     // (학점 수 * 교과목 평점)의 합계
     for (Course course : courses) {
-      multipliedCreditAndCourseGrade +=  course.getCredit() * course.GradeToNumber();
+      multipliedCreditAndCourseGrade += course.multiplyCreditAndCourseGrade();
     }
 
     // 수강신청 총 학점 수
